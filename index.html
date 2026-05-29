@@ -214,9 +214,13 @@ function submitToFormspree(date, time, activity){
   const form = document.getElementById('date-form');
   fetch('https://formspree.io/f/meeddowj', {
     method: 'POST',
-    headers: {'Accept':'application/json','Content-Type':'application/json'},
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Origin': 'https://jasonlee2567-droid.github.io'
+    },
     body: JSON.stringify({ date, time, activity })
-  }).catch(()=>{}); // silent — user never sees errors
+  }).catch(()=>{});
 }
 
 // ── PETALS ──────────────────────────────────────────────
